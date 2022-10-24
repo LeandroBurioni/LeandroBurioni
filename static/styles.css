@@ -1,3 +1,34 @@
 .footer-icons > a{
     margin: 5px;
 }
+
+.skip2content-link {
+  z-index:100;
+  background-color: white;
+  height: 30px;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip2content-link:focus {
+  transform: translateY(0%);
+}
+
+.hola{
+  display: inline-block;
+  animation-delay: 1s;
+  animation-name: saludo;
+  animation-duration: 0.2;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+
+@keyframes saludo {
+  0%   {transform: rotate(0deg); }
+  50%  {transform: rotate(-5deg);}
+  100% {transform: rotate(-10deg);}
+}
