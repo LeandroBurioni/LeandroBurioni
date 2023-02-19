@@ -1,3 +1,11 @@
+.container{
+  min-height: 97vh;
+}
+
+footer{
+  height: 3%;
+}
+
 .footer-icons > a{
     margin: 5px;
 }
