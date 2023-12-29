@@ -8,102 +8,134 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link href="static/styles.css" rel="stylesheet">
         <!-- <script defer src="main.js"></script> -->
+
+        <style>
+            body {
+          background-color: black;
+          height: 100vh;
+          margin: 0rem;
+          overflow: hidden; 
+        }
+        
+        @keyframes rotate {
+          from {
+            rotate: 0deg;
+          }
+          
+          50% {
+            scale: 1 1.5;
+          }
+          
+          to {
+            rotate: 360deg;
+          }
+        }
+        
+        #blob {
+          background-color: white;
+          height: 34vmax;
+          aspect-ratio: 1;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          translate: -50% -50%;
+          border-radius: 50%;
+          background: linear-gradient(to right, aquamarine, mediumpurple);
+          animation: rotate 20s infinite;
+          opacity: 0.8;
+        }
+        
+        #blur {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          z-index: 2;
+          backdrop-filter: blur(12vmax);
+        }
+        
+        h1 {
+          font-family: 'Space Mono', monospace;
+          font-size: clamp(3rem, 10vw, 10rem);
+          color: white;
+          white-space: nowrap;
+          padding: 0rem clamp(1rem, 2vw, 3rem);
+          border-radius: clamp(0.4rem, 0.75vw, 1rem);
+          margin: 0rem;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          translate: -50% -50%;
+          z-index: 3;
+        }
+        
+        #links {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 10;
+          padding: 1rem;
+        }
+
+        </style>
+
     </head>
     <body >
-        <a class="skip2content-link" tabindex="0" href="#body">Skip to main content</a>
-
-        <nav class="navbar navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand fs-3"><i class="bi bi-journal-code"></i></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./index.html#about">About me</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-        </nav>
-    <div id="body" role="main content">
-        <div class="p-5 mb-4 bg-dark">
-           <div class="container-fluid py-5 text-white">
-             <h1 class="display-5 fw-bold"><div class="hola">👋</div> Hola!</h1>
-             <p class="col-md-8 fs-5">
-               Welcome! I'm Leandro Burioni, a full stack Web Developer, and this is my web portfolio.
-             </p>
-             <a type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="./contact.html">Contact me</a>
-           </div>
+        <div id="blob"></div>
+        <div id="blur"></div>
+        <h1 data-value="LEANDROBURIONI">LEANDROBURIONI</h1>
+        <div id="links">
+          <a href="/cv.html"></a>
         </div>
-
-  <div class="container">
-
-    <section id="about">
-
-     <div class="h-100 p-3">
-         <h2>About me..</h2>
-         <p>Since I was child, I always loved to understand how things work, to investigate and try new ways to do the same. My game was to disassemble and reassemble my toys. I’m thankful to my family and teachers for encouraging me to learn and to follow my curiosity.</p>
-     </div>
-    <div class="row align-items-md-stretch">
-     <div class="col-md-6">
-       <div class="h-100 p-3">
-         <h3>Discovering Software's meaning</h3>
-         <p>Once my family got our first computer, I used to look over my brother's shoulders how he plays or does his homework. When I was 9 years old, I went to an institute to learn (by playing) to use basic Microsoft Office's tools and Macromedia's Design and Animation softwares. With only 13 years old (and without coding understanding) I've created my first webpage: hosted in Geocities, designed in Fireworks and implemented with Dreamweaver, maintained with Frontpage to include lot of GIFs (many of those created by me in Flash), pieces of code and third party script as for example a fancy cursor, lot of hover and things that blowed my child mind.</p>
-       </div>
-     </div>
-     <div class="col-md-6">
-       <div class="h-100 p-3">
-         <h2>My very first project</h3>
-         <p>In Argentina, it's common that girls use to do a very special celebration for their 15th birthday. So every birthday I was invited to, I took photos and I made a website where I uploaded the albums. In consequence, I started to be invited to non known girl's birthdays and I tried to associate with a couple of friends to cover more birthdays but we needed cameras and a car to move during nights (and we were very young) the project was stopped.</p>
-       </div>
-     </div>
-     <div class="col-md-6">
-       <div class="h-100 p-3">
-         <h2>Learning about Science & Electronics</h3>
-         <p>At University, I started to study Electronics Engineering where I got a strong understanding in Math and Physics, I met Computer Science developing in C language and also I discovered my skills in problem solving and critical thinking. I enjoyed doing Hardware projects for Digital Electronics such as an alarm clock (with format MM:SS) which triggers any 220V device, created with a pulse setted in once per second with secuencial digital counters and 8 bits display. <a href="https://youtu.be/Q3P-jaWgepw">(Link to demo video)</a> I didn't complete my studies in Electronics Engineering as I moved to System analysis where I got completely focused on the software side.</p>
-       </div>
-     </div>
-     <div class="col-md-6">
-       <div class="h-100 p-3">
-         <h2>As a tech savvy entrepreneur</h3>
-         <p>My first paid job was fixing computers to people known by me; during my adolescence I worked giving support to a sound engineer during live shows. I’ve also did some work as a freelancer with videos: digitizing VHS cassettes, video editions, making videos from collected pictures. As volunteer, I did some designs for events marketing campaings and created some AR instagram's filters.</p>
-       </div>
-     </div>
-    </div>
-
-       <div class="h-100 p-3">
-         <h3>Working professionally with web apps</h3>
-         <p>At the beginning of 2020's pandemic, I decided to start searching for a job in the IT field. So, I've started <a href="https://cs50.harvard.edu/web/2020/">CS50 Web Programming course</a> and to work as QA into a web app project. During these years, I’ve completed the course and started the final project to complete my universitary studies on System Analysis.</p>
-         <p>Working as Quality Assurance, I put in practice how to work into an Agile methodology, to work into different virtual environments, repo management and version control. In this project, we are around 150 people from all around the world working under the DevSecOps model. My current daily work is: as part of Scrum Testing, I'm on charge to review and test Features and User Stories, find bugs and also to write and execute test cases. For Release Milestones, I'm commited to complete on time my assignments on Integration testing. And also, I give support on weekly deployments for hot fixes to production. Due to my performance, after 1+ year working, I've got a promotion. I’m proud of being helpful to my teammates and being the one whom people reach out to for help. </p>
-       </div>
-
-    </section>
-    <section id="projects">
-      <h2>Projects:</h2>
-    	<p>In the next future, here you will find the projects I've worked on. By now, you can go to <a href="https://github.com/LeandroBurioni">my GitHub profile</a> and review my publics repos.</p>
-    </section>
-
-
-  </div>
-</div>
-        <footer class="bg-dark d-flex justify-content-center fs-5 text-white">
-          Find me in:
-          <div class="footer-icons" >
-            <a aria-label="My linkedin profile" href="https://www.linkedin.com/in/leandroburioni/" class="text-reset bi bi-linkedin"></a>
-            <a aria-label="My GitHub profile" href="https://www.github.com/LeandroBurioni" class="text-reset bi bi-github"></a>
-            <a aria-label="My mailbox" href="mailto:leandroburioni@gmail.com?Subject=[From%%20portfolio]" class="text-reset bi bi-envelope"></a>
-          </div>
-        </footer>
+        
     </body>
-</html>
+
+    <script>
+        /* -- Glow effect -- */
+        
+        const blob = document.getElementById("blob");
+        
+        window.onpointermove = event => { 
+          const { clientX, clientY } = event;
+          
+          blob.animate({
+            left: `${clientX}px`,
+            top: `${clientY}px`
+          }, { duration: 3000, fill: "forwards" });
+        }
+        
+        /* -- Text effect -- */
+        
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        
+        let interval = null;
+        
+        document.querySelector("h1").onmouseover = event => {  
+          let iteration = 0;
+          
+          clearInterval(interval);
+          
+          interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+              .split("")
+              .map((letter, index) => {
+                if(index < iteration) {
+                  return event.target.dataset.value[index];
+                }
+              
+                return letters[Math.floor(Math.random() * 26)]
+              })
+              .join("");
+            
+            if(iteration >= event.target.dataset.value.length){ 
+              clearInterval(interval);
+            }
+            
+            iteration += 1 / 3;
+          }, 30);
+        }
+                </script>
+        
+
